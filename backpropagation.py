@@ -96,9 +96,12 @@ if __name__ == '__main__':
     M = 4
     K = 3
 
-    X1 = np.array([-2, 0]) + np.random.randn(N, D)
-    X2 = np.array([0, 2]) + np.random.randn(N, D)
-    X3 = np.array([2, 0]) + np.random.randn(N, D)
+    # X1 = np.array([-2, 0]) + np.random.randn(N, D)
+    # X2 = np.array([0, 2]) + np.random.randn(N, D)
+    # X3 = np.array([2, 0]) + np.random.randn(N, D)
+    X1 = np.random.randn(N, D) + np.array([0, -2])
+    X2 = np.random.randn(N, D) + np.array([2, 2])
+    X3 = np.random.randn(N, D) + np.array([-2, 2])
     X = np.vstack([X1, X2, X3])
     Y = np.array([0] * N + [1] * N + [2] * N)
 
@@ -122,7 +125,7 @@ if __name__ == '__main__':
 
     # print(p_Y)
     # print(classification_rate(Y, p_Y))
-    epochs = 5000
+    epochs = 1000
     learning_rate = 1e-3
     costs = []
 
